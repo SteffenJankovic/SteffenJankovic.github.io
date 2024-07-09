@@ -68,7 +68,7 @@ footer {
     background: #ccc;
     padding: 10px 0;
 }
-/* Ergänzendes CSS für das Formular */
+
 form fieldset {
     border: none;
     padding: 0;
@@ -81,7 +81,7 @@ form label {
 }
 
 form textarea {
-    resize: vertical; /* Erlaubt das Vertikal-Ziehen der Textarea */
+    resize: vertical; 
 }
 
 .checkbox {
@@ -100,6 +100,6 @@ form textarea {
 
 @media (max-width: 600px) {
     form label, form input, form textarea, form button {
-        max-width: 100%; /* Passt die Breite auf kleinen Bildschirmen an */
+        max-width: 100%; 
     }
 }
