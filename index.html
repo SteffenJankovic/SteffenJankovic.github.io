@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Webseite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">Über Uns</a></li>
+                <li><a href="#idea">Unsere Idee</a></li>
+                <li><a href="#person1">Person 1</a></li>
+                <li><a href="#person2">Person 2</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h1>Willkommen auf unserem Portfolio</h1>
+            <p>Hier stellen wir uns und unsere Arbeiten vor.</p>
+        </section>
+
+        <section id="idea">
+            <h2>Unsere Idee</h2>
+            <p>Hier könnt ihr eure innovative Idee beschreiben. Gebt einen Überblick über das Projekt, seine Ziele und was es einzigartig macht.</p>
+        </section>
+
+        <section id="person1">
+            <h2>Person 1</h2>
+            <img src="person1.jpg" alt="Person 1 Foto">
+            <p>Beschreibung von Person 1. Hier kannst du Informationen über die Erfahrungen, Projekte und Fähigkeiten von Person 1 hinzufügen.</p>
+        </section>
+
+        <section id="person2">
+            <h2>Person 2</h2>
+            <img src="person2.jpg" alt="Person 2 Foto">
+            <p>Beschreibung von Person 2. Hier kannst du Informationen über die Erfahrungen, Projekte und Fähigkeiten von Person 2 hinzufügen.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Senden</button>
+            </form>
+            <p id="response-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dein Name und Andere Person</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
