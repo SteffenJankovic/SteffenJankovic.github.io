@@ -3,43 +3,52 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
+    background: #ccc;
+    padding: 20px 0;
     text-align: center;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.logo img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 section {
+    width: 80%;
+    max-width: 800px;
+    background: #fff;
+    margin: 20px 0;
     padding: 20px;
-    margin: 20px;
-}
-
-h1, h2 {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
+section#person1, section#person2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#person1 img, section#person2 img {
+    max-width: 150px;
+    margin-bottom: 10px;
 }
 
 form {
@@ -50,11 +59,12 @@ form {
 
 form label, form input, form textarea, form button {
     margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
 }
 
 footer {
     text-align: center;
-    background: #333;
-    color: #fff;
+    background: #ccc;
     padding: 10px 0;
 }
