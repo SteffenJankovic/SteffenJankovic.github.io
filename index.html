@@ -7,63 +7,60 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <h1>dein Verein</h1>
+<div class="header">
+    <img src="log_hand1.png" alt="Bild" height="400" width="400">
+    <img src="log_hand1.png" alt="Bild" height="400" width="400">
+</div>
+
+<div class="section section-small">
+    <h2>Mission</h2>
+    <p>Wir möchten Gutes tun unterstützen indem wir Gutes tun!</p>
+</div>
+<section class="flex-section">
+    <div class="section steffen">
+        <h2>Steffen</h2>
+        <p>Vorstellungstext Steffen</p>
+    </div>
+    <img src="bild.jpg" alt="Bild" class="image" id="steffen">
+</section>
+<section class="flex-section">
+    <div class="section feli">
+        <h2>Feli</h2>
+        <p>Vorstellungstext feli</p>
+    </div>
+    <img src="bild.jpg" alt="Bild" class="image" id="feli">
+</section>
+
+<section id="contact">
+    <h2>Kontaktformular</h2>
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required>
+
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="E-Mail" required>
+
+            <label for="message">Bitte geben Sie hier Ihre Nachricht ein.</label>
+            <textarea id="message" rows="3" name="Nachricht" required></textarea>
+
+            <div class="checkbox">
+                <input type="checkbox" id="datenschutz" name="Datenverarbeitung_bestätigt" value="Ja" required>
+                <label for="datenschutz">Ich bestätige die Datenverarbeitung gemäß DSGVO.</label>
+            </div>
+        </fieldset>
+
+        <div class="btns">
+            <input type="submit" value="Absenden">
         </div>
-    </header>
+    </form>
+    <p id="response-message"></p>
+</section>
 
-    <main>
-        <section id="mission">
-            <h2>Unsere Mision</h2>
-            <p>Hier könnt ihr eure Mission und Ziele beschreiben.</p>
-        </section>
+<footer>
+    &copy; 2024 Steffen und Feil
+</footer>
+<script src="scripts.js"></script>
 
-        <section id="person1">
-            <h2>Steffen</h2>
-            <img src="images/person1.jpg" alt="Steffen Foto">
-            <p>Beschreibung von Steffen.</p>
-        </section>
-
-        <section id="person2">
-            <h2>Feil</h2>
-            <img src="images/person2.jpg" alt="Feil Foto">
-            <p>Beschreibung von Feli.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Kontaktformular</h2>
-            <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
-                <fieldset>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="Name" required>
-        
-                    <label for="email">E-Mail-Adresse</label>
-                    <input type="email" id="email" name="E-Mail" required>
-        
-                    <label for="message">Bitte geben Sie hier Ihre Nachricht ein.</label>
-                    <textarea id="message" rows="3" name="Nachricht" required></textarea>
-        
-                    <div class="checkbox">
-                        <input type="checkbox" id="datenschutz" name="Datenverarbeitung_bestätigt" value="Ja" required>
-                        <label for="datenschutz">Ich bestätige die Datenverarbeitung gemäß DSGVO.</label>
-                    </div>
-                </fieldset>
-        
-                <div class="btns">
-                    <input type="submit" value="Absenden">
-                </div>
-            </form>
-            <p id="response-message"></p>
-        </section>
-        
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Steffen und Feli</p>
-    </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>

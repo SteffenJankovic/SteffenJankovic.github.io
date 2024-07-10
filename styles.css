@@ -1,54 +1,64 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    height: 300vh;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    display: grid;
+    grid-template-rows: 10fr 7fr 9fr 9fr 12fr 2fr;
+    grid-template-columns: 1fr;
 }
 
-header {
-    background: #ccc;
-    padding: 20px 0;
+.backgroundColor {
+}
+
+.header {
+    background-color: #ADC6FF;
+    grid-row: 1;
     text-align: center;
 }
 
-.logo {
+.flex-section {
+    background-color: #F5F9E9;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.logo img {
-    max-width: 100px;
-    margin-bottom: 10px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-section {
-    width: 80%;
-    max-width: 800px;
-    background: #fff;
-    margin: 20px 0;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.steffen {
+    background-color: #F5F9E9;
+    flex: 1;
     text-align: center;
+    grid-row-start: 3;
+    order: 1;
+
 }
 
-section#person1, section#person2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.image {
+    background-color: #F5F9E9;
+    max-width: 40%;
+    flex: 0.5;
 }
 
-section#person1 img, section#person2 img {
-    max-width: 150px;
-    margin-bottom: 10px;
+#steffen {
+    order: 2;
+}
+
+#feli {
+    order: 1;
+}
+
+.feli {
+    background-color: #F5F9E9;
+    flex: 1;
+    text-align: center;
+    grid-row-start: 4;
+    order: 2;
+
+}
+
+
+.formular {
+    background-color: #F5F9E9;
+    text-align: center;
+    grid-row-start: 5;
 }
 
 form {
@@ -57,16 +67,16 @@ form {
     align-items: normal;
 }
 
-form label, form input, form textarea, form button {
-    margin: 10px 0;
-    width: 100%;
-    max-width: 400px;
+.section-small {
+    background-color: #F5F9E9;
+    text-align: center;
+    grid-row: 2;
 }
 
 footer {
     text-align: center;
-    background: #ccc;
-    padding: 10px 0;
+    grid-row: 6;
+    background-color: #ADC6FF;
 }
 
 form fieldset {
@@ -81,7 +91,7 @@ form label {
 }
 
 form textarea {
-    resize: vertical; 
+    resize: vertical;
 }
 
 .checkbox {
@@ -100,6 +110,6 @@ form textarea {
 
 @media (max-width: 600px) {
     form label, form input, form textarea, form button {
-        max-width: 100%; 
+        max-width: 100%;
     }
 }
