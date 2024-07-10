@@ -79,6 +79,11 @@ footer {
     background-color: #ADC6FF;
 }
 
+#contact {
+    grid-row: 5;
+    background-color: #F5F9E9;
+}
+
 form fieldset {
     border: none;
     padding: 0;
