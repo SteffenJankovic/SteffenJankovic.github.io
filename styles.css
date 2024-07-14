@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    color: #02146F;
     height: 300vh;
     margin: 0;
     padding: 0;
@@ -9,8 +10,8 @@ body {
 }
 
 .header {
-    background-color: #ADC6FF;
     grid-row: 1;
+    height: 100vh; /*damit die "landing page die gesamte Höhe einnimmt*/
     text-align: center;
 }
 
@@ -168,9 +169,10 @@ button[type="submit"]:hover {
         padding: 0 20px;
     }
 }
-
+.underlyingbox{
+    background-color: #EBF0FF;
+}
 footer {
-    background-color: #EBF0FF; /* Hellblauer Hintergrund */
     text-align: center;
     padding: 10px 0; /* Vertikales Padding */
     margin-top: auto; /* Footer am Ende der Seite */

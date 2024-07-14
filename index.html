@@ -7,33 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="header">
-    <img src="log_hand1.png" alt="Bild" height="400" width="400">
-    <img src="log_hand1.png" alt="Bild" height="400" width="400">
-</div>
+<section class="underlyingbox">
+    <div class="header">
+        <img src="log_hand1.png" alt="Bild" height="400" width="400">
+        <img src="log_hand1.png" alt="Bild" height="400" width="400">
+    </div>
 
+</section>
 
 <div class="section section-small">
     <h2>Mission</h2>
     <p>Wir möchten Gutes tun unterstützen indem wir Gutes tun!</p>
 </div>
-
-<section id="feli"" class="flex-section">
-    <div class="section feli">
-        <h2>Feli</h2>
-        <p>Vorstellungstext Feli</p>
-    </div>
-    <img src="bild.jpg" alt="Bild" class="image" id="Feli">
+<section class="underlyingbox">
+    <section id="feli" class="flex-section">
+        <div class="section feli">
+            <h2>Feli</h2>
+            <p>Vorstellungstext Feli</p>
+        </div>
+        <img src="feli.png" alt="Bild" class="image">
+    </section>
+    <section id="steffen" class="flex-section">
+        <div class="section steffen">
+            <h2>Steffen</h2>
+            <p>Vorstellungstext Steffen</p>
+        </div>
+        <img src="steffen.png" alt="Bild" class="image">
+    </section>
 </section>
-<section id="steffen" class="flex-section">
-    <div class="section steffen">
-        <h2>Steffen</h2>
-        <p>Vorstellungstext Steffen</p>
-    </div>
-    <img src="bild.jpg" alt="Bild" class="image" id="steffen">
-</section>
 
-<section id="contact" class="formular">
+<section id="contact" class="underlyingbox">
     <h1>Meld dich für Website!</h1>
     <div class="contact-container">
         <div class="contact-text">
@@ -65,9 +68,10 @@
     <p id="response-message"></p>
 </section>
 
-<footer>
+<footer class="underlyingbox">
     &copy; 2024 Steffen und Feil
 </footer>
 <script src="scripts.js"></script>
+
 </body>
 </html>
