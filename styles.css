@@ -2,13 +2,12 @@ body {
     font-family: Arial, sans-serif;
     color: #02146F;
     background-color: #FFFEFA;
-    min-height: 100vh; /* Mindesthöhe des Viewports */
-    height: fit-content;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 100vh 7fr 9fr 9fr 8fr 1fr;
+    grid-template-rows: 100vh 7fr 9fr 8fr 1fr;
     grid-template-columns: 1fr;
     scroll-snap-type: y mandatory; /* Aktiviert Scroll-Snapping entlang der vertikalen Achse */
     overflow-y: scroll; /* Ermöglicht vertikales Scrollen */
@@ -47,34 +46,43 @@ body {
 .bottom-left-text {
     display: block;
     position: absolute;
-    bottom: 10px; /* Abstand vom unteren Rand */
-    left: 10px; /* Abstand vom linken Rand */
+    bottom: 10px;
+    left: 10px;
     font-size: 6em;
     margin: 0;
-    padding: 10px; /* Innenabstand anpassen */
-
-    /*needed for cursor animation*/
-    border-right: 5px solid;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 4s steps(10),
-    cursor .4s step-end infinite alternate;
+    padding: 10px;
+    max-width: calc(100vw - 20px); /* Maximale Breite des Containers abzüglich Rand */
+    overflow: hidden; /* Verhindert, dass der Text außerhalb des Containers sichtbar ist */
 }
 
-/*make cursor blink*/
-@keyframes cursor {
-    10% {
-        border-color: transparent
-    }
+.typewriter {
+    max-width: 40%; /* Maximale Breite des Containers auf 100% setzen */
+    overflow: hidden; /* Verhindert, dass der Text außerhalb des Containers sichtbar ist */
+    border-right: .15em solid orange; /* cursor */
+    white-space: nowrap; /* verhindert Zeilenumbruch */
+    margin: 0 auto; /* Zentriert den Text horizontal im Container */
+    letter-spacing: .05em; /* Abstand zwischen Buchstaben */
+    animation: typing 3.5s steps(10),
+    blink-caret .75s step-end infinite;
 }
 
-/*make cursor blink*/
+/* The typing effect */
 @keyframes typing {
     from {
-        width: 0
+        width: 0; /* Animation beginnt mit einer Breite von 0 */
     }
     to {
-        width: 100%
+        width: 100%; /* Animation endet mit der vollen Breite des Inhalts */
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent; /* Anfang und Ende ohne Cursor */
+    }
+    50% {
+        border-color: orange; /* Cursor sichtbar in der Mitte der Animation */
     }
 }
 
@@ -113,30 +121,38 @@ body {
 }
 
 .flex-section {
-    grid-row: 3;
     display: flex;
+    flex-direction: column;
     padding: 20px;
+}
+
+.aboutus-container {
+    grid-row: 3;
+    margin: 10em;
 }
 
 .feli {
     flex: 1;
-    align-content: start;
+    align-items: start;
 }
 
 .header-feli {
-    position: absolute;
-    top: 0;
-    left: 10em;
-    font-size: 30px;
+    position: relative;
+    top: -50%;
+    right: 90%;
+    font-size: 50px;
 }
 
 .steffen {
     flex: 2;
+    align-items: end;
 }
 
 .header-steffen {
-    position: absolute;
-    text-align: end;
+    position: relative;
+    top: -50%;
+    left: 100%;
+    font-size: 50px;
 }
 
 .image {
@@ -145,7 +161,7 @@ body {
 
 #contact {
     text-align: center;
-    grid-row-start: 5;
+    grid-row-start: 4;
     padding: 20px;
 }
 
@@ -195,7 +211,7 @@ form {
 
 .rectangle-form {
     position: absolute;
-    right: 33em;
+    right: 32em;
     width: 440px; /* Breite des Rechtecks */
     height: 300px; /* Höhe des Rechtecks */
     border: 4px solid #FFA500;
@@ -300,4 +316,5 @@ button[type="submit"]:hover {
     grid-row: 6;
     text-align: center;
     margin: auto 0 0;
+    min-height: 75px;
 }
