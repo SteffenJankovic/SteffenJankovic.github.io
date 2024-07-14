@@ -120,6 +120,15 @@ body {
     border: 4px solid #FFA500; /* Rahmen mit 2px Dicke und schwarzer Farbe */
 }
 
+.illu_1 {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 20%;
+    right: -20em;
+    z-index: 1;
+}
+
 .flex-section {
     display: flex;
     flex-direction: column;
