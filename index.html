@@ -7,70 +7,75 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<section class="underlyingbox">
-    <div class="header">
-        <div class="LPcontainer">
-            <p class="bottom-left-text">WebHeroes.</p>
-            <p class="middle-right-text">Kostenlose Websiten <br>für Alltagshelden.</p>
-
-        </div>
+<div class="header section ">
+    <div class="LPcontainer">
+        <p class="bottom-left-text">WebHeroes.</p>
+        <p class="middle-right-text">Kostenlose Websiten <br>für Alltagshelden.</p>
     </div>
+</div>
+
+<section class="section section-small underlyingbox">
+    <div class="content">
+        <h2 class="mission-heading">Mission</h2>
+        <p>Wir möchten Gutes tun unterstützen indem wir Gutes tun!</p>
+    </div>
+    <div class="rectangle"></div>
 </section>
 
-<div class="section section-small">
-    <h2>Mission</h2>
-    <p>Wir möchten Gutes tun unterstützen indem wir Gutes tun!</p>
-</div>
-<section class="underlyingbox">
+<section class="underlyingbox section ">
     <section id="feli" class="flex-section">
         <div class="section feli">
-            <h2>Feli</h2>
+            <h2 class="header-feli">Feli</h2>
             <p>Vorstellungstext Feli</p>
         </div>
-        <img src="feli.png" alt="Bild" class="image">
+        <img src="feli.svg" alt="Bild" class="image">
     </section>
     <section id="steffen" class="flex-section">
         <div class="section steffen">
-            <h2>Steffen</h2>
+            <h2 class="header-steffen">Steffen</h2>
             <p>Vorstellungstext Steffen</p>
         </div>
-        <img src="steffen.png" alt="Bild" class="image">
+        <img src="steffen.svg" alt="Bild" class="image">
     </section>
 </section>
 
-<section id="contact" class="underlyingbox">
-    <h1>Meld dich für Website!</h1>
-    <div class="contact-container">
-        <div class="contact-text">
-            <h1>Get</h1>
-            <h1>in Touch!</h1>
-        </div>
-        <form id="contact-form" action="https://formspree.io/f/mldrdnwq" method="POST">
-            <fieldset>
-                <label for="name">Name Deiner Organisation</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Dein Anliegen</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <!--<div class="checkbox">
-                    <input type="checkbox" id="datenschutz" name="Datenverarbeitung_bestätigt" value="Ja" required>
-                    <label for="datenschutz">Ich bestätige die Datenverarbeitung gemäß DSGVO.</label>
-                </div>//-->
-            </fieldset>
-
-            <div class="btns">
-                <button type="submit">Send</button>
+<section id="contact" class="underlyingbox section ">
+    <div class="rectangle-form"></div>
+    <div class="content">
+        <h1 class="form-heading">Melde dich!</h1>
+        <div class="contact-container">
+            <div class="contact-text">
+                <h1>Get</h1>
+                <h1>in Touch!</h1>
             </div>
-        </form>
+            <form id="contact-form" action="https://formspree.io/f/mldrdnwq" method="POST">
+                <fieldset>
+                    <label for="name">Name Deiner Organisation</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Dein Anliegen</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <!--<div class="checkbox">
+                        <input type="checkbox" id="datenschutz" name="Datenverarbeitung_bestätigt" value="Ja" required>
+                        <label for="datenschutz">Ich bestätige die Datenverarbeitung gemäß DSGVO.</label>
+                    </div>//-->
+                </fieldset>
+
+                <div class="btns">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+        <p id="response-message"></p>
     </div>
-    <p id="response-message"></p>
+
 </section>
 
-<footer class="underlyingbox">
+<footer class="underlyingbox section footer">
     &copy; 2024 Steffen und Feil
 </footer>
 <script src="scripts.js"></script>

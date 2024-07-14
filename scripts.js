@@ -30,3 +30,10 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         document.getElementById('response-message').style.color = 'red';
     });
 });
+
+//Entfernen der Schreibanimation nach dem ersten Laden der Seite
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.querySelector('.typing-animation').classList.remove('typing-animation');
+    }, 3500); // 3500 Millisekunden (3.5 Sekunden)
+});

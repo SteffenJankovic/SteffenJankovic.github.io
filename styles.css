@@ -2,18 +2,40 @@ body {
     font-family: Arial, sans-serif;
     color: #02146F;
     background-color: #FFFEFA;
-    height: 300vh;
+    min-height: 100vh; /* Mindesthöhe des Viewports */
+    height: fit-content;
+    width: 100vw;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 10fr 7fr 9fr 9fr 12fr 2fr;
+    grid-template-rows: 100vh 7fr 9fr 9fr 8fr 1fr;
     grid-template-columns: 1fr;
+    scroll-snap-type: y mandatory; /* Aktiviert Scroll-Snapping entlang der vertikalen Achse */
+    overflow-y: scroll; /* Ermöglicht vertikales Scrollen */
+}
+
+/* blaue Hintergrundfarbe der */
+.underlyingbox {
+    margin: 10em; /* dadurch haben alle Abschnitte einen festgelegten Abstand zueinander*/
+    background-color: #EBF0FF;
+    position: relative; /* Position relativ setzen für absolute Positionierung innerhalb */
+}
+
+.section {
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .header {
+    grid-row: 1;
     display: flex;
     align-items: flex-end;
-    height: 100vh; /* damit die "Landing Page" die gesamte Höhe einnimmt */
+    justify-content: center;
+    background-color: #EBF0FF;
+    position: relative;
 }
 
 .LPcontainer {
@@ -23,12 +45,37 @@ body {
 }
 
 .bottom-left-text {
+    display: block;
     position: absolute;
     bottom: 10px; /* Abstand vom unteren Rand */
     left: 10px; /* Abstand vom linken Rand */
     font-size: 6em;
     margin: 0;
     padding: 10px; /* Innenabstand anpassen */
+
+    /*needed for cursor animation*/
+    border-right: 5px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(10),
+    cursor .4s step-end infinite alternate;
+}
+
+/*make cursor blink*/
+@keyframes cursor {
+    10% {
+        border-color: transparent
+    }
+}
+
+/*make cursor blink*/
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
 }
 
 .middle-right-text {
@@ -38,21 +85,61 @@ body {
     transform: translateY(-50%); /* Exakte vertikale Zentrierung */
     font-size: 1.25em;
     margin: 0;
-    padding: 10px; /* Innenabstand anpassen */}
+    padding: 10px; /* Innenabstand anpassen */
+}
 
+.section-small {
+    grid-row: 2;
+    min-height: 50vh; /* Mindesthöhe ggf, nur Übergangsweise*/
+}
+
+.mission-heading {
+    position: absolute;
+    left: 50%;
+    top: -1.6em; /* Anpassen, um die Position der Überschrift zu steuern */
+    transform: translateX(-50%);
+    padding: 10px;
+    color: #02146F;
+    z-index: 1; /* Z-index setzen, um sicherzustellen, dass die Überschrift über dem Inhalt liegt */
+    font-size: 4em;
+}
+
+.rectangle {
+    position: absolute;
+    right: -5em;
+    width: 400px; /* Breite des Rechtecks */
+    height: 500px; /* Höhe des Rechtecks */
+    border: 4px solid #FFA500; /* Rahmen mit 2px Dicke und schwarzer Farbe */
+}
 
 .flex-section {
+    grid-row: 3;
     display: flex;
     padding: 20px;
 }
 
-.steffen, .feli {
+.feli {
     flex: 1;
-    text-align: center;
+    align-content: start;
+}
+
+.header-feli {
+    position: absolute;
+    top: 0;
+    left: 10em;
+    font-size: 30px;
+}
+
+.steffen {
+    flex: 2;
+}
+
+.header-steffen {
+    position: absolute;
+    text-align: end;
 }
 
 .image {
-    max-width: 40%;
     flex: 0.5;
 }
 
@@ -71,7 +158,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #EBF0FF;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
 }
 
@@ -96,6 +183,7 @@ body {
 }
 
 form {
+    grid-row: 4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,6 +191,14 @@ form {
     padding: 20px;
     border-radius: 10px;
     overflow: hidden;
+}
+
+.rectangle-form {
+    position: absolute;
+    right: 33em;
+    width: 440px; /* Breite des Rechtecks */
+    height: 300px; /* Höhe des Rechtecks */
+    border: 4px solid #FFA500;
 }
 
 form fieldset {
@@ -189,14 +285,19 @@ button[type="submit"]:hover {
     }
 }
 
-.underlyingbox {
-    background-color: #EBF0FF;
-    margin-left: 10px; /* nur Übergangsweise für Sichtbarkeit*/
+.form-heading {
+    position: absolute;
+    left: 50%;
+    top: -1.6em; /* Anpassen, um die Position der Überschrift zu steuern */
+    transform: translateX(-50%);
+    padding: 10px;
+    color: #02146F;
+    z-index: 1; /* Z-index setzen, um sicherzustellen, dass die Überschrift über dem Inhalt liegt */
+    font-size: 4em;
 }
 
-
-footer {
+.footer {
+    grid-row: 6;
     text-align: center;
-    padding: 10px 0; /* Vertikales Padding */
-    margin-top: auto; /* Footer am Ende der Seite */
+    margin: auto 0 0;
 }
