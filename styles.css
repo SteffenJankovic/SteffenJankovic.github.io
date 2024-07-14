@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #02146F;
+    background-color: #FFFEFA;
     height: 300vh;
     margin: 0;
     padding: 0;
@@ -16,34 +17,28 @@ body {
 }
 
 
-
 .flex-section {
-    background-color: #F5F9E9;
     display: flex;
     padding: 20px;
 }
 
 .steffen, .feli {
-    background-color: #F5F9E9;
     flex: 1;
     text-align: center;
 }
 
 .image {
-    background-color: #F5F9E9;
     max-width: 40%;
     flex: 0.5;
 }
 
 #contact {
-    background-color: #F5F9E9;
     text-align: center;
     grid-row-start: 5;
     padding: 20px;
 }
 
 .formular {
-    background-color: #F5F9E9;
     text-align: center;
 }
 
@@ -171,6 +166,7 @@ button[type="submit"]:hover {
 }
 .underlyingbox{
     background-color: #EBF0FF;
+    margin: 10px;
 }
 footer {
     text-align: center;
