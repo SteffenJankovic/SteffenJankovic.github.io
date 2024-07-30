@@ -7,10 +7,9 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 100vh 7fr 9fr 8fr 1fr;
+    grid-template-rows: 100vh 2fr 3fr 2fr 1fr;
     grid-template-columns: 1fr;
-    scroll-snap-type: y mandatory; /* Aktiviert Scroll-Snapping entlang der vertikalen Achse */
-    overflow-y: scroll; /* Ermöglicht vertikales Scrollen */
+    scroll-snap-type: y mandatory;
 }
 
 /* blaue Hintergrundfarbe der */
@@ -21,7 +20,7 @@ body {
 }
 
 .section {
-    scroll-snap-align: start;
+    scroll-snap-align: start; /* Sorgt dafür, dass die Abschnitte am Anfang snappen */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,6 +98,7 @@ body {
 .section-small {
     grid-row: 2;
     min-height: 50vh; /* Mindesthöhe ggf, nur Übergangsweise*/
+    position: relative;
 }
 
 .mission-heading {
@@ -112,22 +112,44 @@ body {
     font-size: 4em;
 }
 
+.mission-text {
+    text-align: left;
+    margin-left: -10em;
+    overflow-wrap: break-word; /* Ermöglicht Zeilenumbrüche bei langen Wörtern */
+    padding: 0 1em; /* Fügt einen Innenabstand hinzu, um sicherzustellen, dass der Text nicht am Rand klebt */
+}
+
+.mission-text-header {
+    text-align: left;
+    margin-left: -10em;
+    font-size: xxx-large;
+}
+
 .rectangle {
     position: absolute;
     right: -5em;
-    width: 400px; /* Breite des Rechtecks */
-    height: 500px; /* Höhe des Rechtecks */
-    border: 4px solid #FFA500; /* Rahmen mit 2px Dicke und schwarzer Farbe */
+    width: 400px;
+    height: 450px;
+    border: 4px solid #FFA500;
+    overflow: hidden; /* Verhindert, dass Inhalte außerhalb des Rechtecks sichtbar sind */
 }
 
-.illu_1 {
+.svg-container {
     position: absolute;
-    width: 70%;
-    height: 70%;
-    top: 20%;
-    right: -20em;
-    z-index: 1;
+    bottom: 0; /* Am unteren Rand des Rechtecks ausrichten */
+    left: 0;
+    width: 100%; /* Maximale Breite des Rechtecks */
+    height: auto; /* Höhe wird automatisch angepasst */
+    display: flex;
+    justify-content: center; /* Zentriert das SVG horizontal */
+    align-items: flex-end; /* Richtet das SVG am unteren Rand des Containers aus */
 }
+
+.svg-container img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 .flex-section {
     display: flex;
@@ -140,32 +162,40 @@ body {
     margin: 10em;
 }
 
-.feli {
+.flex-section {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+#feli {
+    flex-direction: row; /* Text links Bild rechts */
+}
+
+.feli-text {
     flex: 1;
-    align-items: start;
+    text-align: justify;
+    margin-top: 50px;
 }
 
-.header-feli {
-    position: relative;
-    top: -50%;
-    right: 90%;
-    font-size: 50px;
+.feli-image {
+    flex: 0 0 auto;
+    margin-left: 26em; /* Abstand zwischen dem Text und dem Bild */
 }
 
-.steffen {
-    flex: 2;
-    align-items: end;
+#steffen {
+    flex-direction: row-reverse; /* Bild links Text rechts */
 }
 
-.header-steffen {
-    position: relative;
-    top: -50%;
-    left: 100%;
-    font-size: 50px;
+.steffen-text {
+    flex: 1;
+    text-align: justify;
+    margin-top: 20px;
 }
 
-.image {
-    flex: 0.5;
+.steffen-image {
+    flex: 0 0 auto;
+    margin-right: 26em; /* Abstand zwischen dem Bild und dem Text*/
 }
 
 #contact {
@@ -295,13 +325,14 @@ button[type="submit"]:hover {
     background-color: #3064c7;
 }
 
+
 @media (max-width: 600px) {
     .contact-container {
         flex-direction: column;
     }
 
     .contact-text {
-        text-align: right;
+        text-align: left;
         padding: 20px 0;
     }
 
