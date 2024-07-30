@@ -7,14 +7,16 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 100vh 2fr 3fr 2fr 1fr;
+    grid-template-rows: 100vh 1fr 1.5fr 3fr 2fr 1fr;
     grid-template-columns: 1fr;
     scroll-snap-type: y mandatory;
 }
 
 /* blaue Hintergrundfarbe der */
 .underlyingbox {
-    margin: 10em; /* dadurch haben alle Abschnitte einen festgelegten Abstand zueinander*/
+    margin-left: 10em;
+    margin-right: 10em;
+    margin-top: 10em; /* dadurch haben alle Abschnitte einen festgelegten Abstand zueinander*/
     background-color: #EBF0FF;
     position: relative; /* Position relativ setzen für absolute Positionierung innerhalb */
 }
@@ -150,6 +152,20 @@ body {
     height: auto;
 }
 
+.how-it-works {
+    grid-row: 3;
+}
+
+.how-it-works-heading {
+    position: absolute;
+    left: 50%;
+    top: -1.6em; /* Anpassen, um die Position der Überschrift zu steuern */
+    transform: translateX(-50%);
+    padding: 10px;
+    color: #02146F;
+    z-index: 1; /* Z-index setzen, um sicherzustellen, dass die Überschrift über dem Inhalt liegt */
+    font-size: 4em;
+}
 
 .flex-section {
     display: flex;
@@ -158,7 +174,7 @@ body {
 }
 
 .aboutus-container {
-    grid-row: 3;
+    grid-row: 4;
     margin: 10em;
 }
 
@@ -200,7 +216,7 @@ body {
 
 #contact {
     text-align: center;
-    grid-row-start: 4;
+    grid-row-start: 5;
     padding: 20px;
 }
 
@@ -238,7 +254,7 @@ body {
 }
 
 form {
-    grid-row: 4;
+    grid-row: 6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -353,7 +369,7 @@ button[type="submit"]:hover {
 }
 
 .footer {
-    grid-row: 6;
+    grid-row: auto;
     text-align: center;
     margin: auto 0 0;
     min-height: 75px;
