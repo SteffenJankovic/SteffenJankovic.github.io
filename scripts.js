@@ -37,3 +37,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.typing-animation').classList.remove('typing-animation');
     }, 3500); // 3500 Millisekunden (3.5 Sekunden)
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const rectangle = document.querySelector('.rectangle');
+
+    if (rectangle) {
+        const rectangleWidth = rectangle.offsetWidth;
+        document.documentElement.style.setProperty('--rectangle-width', `${rectangleWidth}px`);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const rectangleF = document.querySelector('.rectangle-form');
+
+    if (rectangleF) {
+        const rectangleWidth = rectangleF.offsetWidth;
+        document.documentElement.style.setProperty('--rectangleF-width', `${rectangleWidth}px`);
+    }
+});

@@ -1,28 +1,40 @@
+:root {
+    --rectangle-width: 400px;
+    --rectangleF-width: 400px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: y mandatory; /* Scroll-Snap für vertikales Scrollen aktivieren */
+    overflow-y: scroll; /* Scrollen aktivieren */
+}
+
 body {
     font-family: Arial, sans-serif;
     color: #02146F;
     background-color: #FFFEFA;
-    height: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0;
     display: grid;
-    grid-template-rows: 100vh 1fr 1.5fr 3fr 2fr 1fr;
+    /*Landingpage Mission How it works About us Contact Footer*/
+    grid-template-rows: 100vh 1fr 1.4fr 1.5fr 1fr 0.5fr;
     grid-template-columns: 1fr;
-    scroll-snap-type: y mandatory;
+
 }
 
 /* blaue Hintergrundfarbe der */
 .underlyingbox {
     margin-left: 10em;
     margin-right: 10em;
-    margin-top: 10em; /* dadurch haben alle Abschnitte einen festgelegten Abstand zueinander*/
+    margin-top: 12em; /* dadurch haben alle Abschnitte einen festgelegten Abstand zueinander*/
     background-color: #EBF0FF;
     position: relative; /* Position relativ setzen für absolute Positionierung innerhalb */
+    z-index: -1;
 }
 
 .section {
-    scroll-snap-align: start; /* Sorgt dafür, dass die Abschnitte am Anfang snappen */
+    scroll-snap-align: center; /* Sorgt dafür, dass die Abschnitte am Anfang snappen */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,10 +127,14 @@ body {
 }
 
 .mission-text {
+    position: relative;
+    padding-right: calc(var(--rectangle-width) + 20px); /* Abstand zum Rechteck */
     text-align: left;
-    margin-left: -10em;
-    overflow-wrap: break-word; /* Ermöglicht Zeilenumbrüche bei langen Wörtern */
-    padding: 0 1em; /* Fügt einen Innenabstand hinzu, um sicherzustellen, dass der Text nicht am Rand klebt */
+    padding-left: 10em;
+    overflow-wrap: break-word;
+    width: calc(100% - 420px); /* damit Text Platz für das Rechteck hat */
+    display: flex;
+    flex-direction: column; /* Vertikale Ausrichtung */
 }
 
 .mission-text-header {
@@ -129,11 +145,12 @@ body {
 
 .rectangle {
     position: absolute;
-    right: -5em;
-    width: 400px;
+    width: var(--rectangle-width); /* Verwendet die CSS-Variable */
     height: 450px;
     border: 4px solid #FFA500;
-    overflow: hidden; /* Verhindert, dass Inhalte außerhalb des Rechtecks sichtbar sind */
+    overflow: hidden; /*nichts was das Rechteck überschreitet soll sichtbar sein*/
+    right: -5em; /*nach rechts außen verschieben*/
+
 }
 
 .svg-container {
@@ -165,6 +182,7 @@ body {
     color: #02146F;
     z-index: 1; /* Z-index setzen, um sicherzustellen, dass die Überschrift über dem Inhalt liegt */
     font-size: 4em;
+
 }
 
 .flex-section {
@@ -175,13 +193,13 @@ body {
 
 .aboutus-container {
     grid-row: 4;
-    margin: 10em;
+    margin-left: 10em;
+    margin-right: 10em;
 }
 
-.flex-section {
-    display: flex;
-    align-items: center;
-    padding: 20px;
+.about-us-heading {
+    font-size: xxx-large;
+    margin-bottom: 0;
 }
 
 #feli {
@@ -196,7 +214,9 @@ body {
 
 .feli-image {
     flex: 0 0 auto;
-    margin-left: 26em; /* Abstand zwischen dem Text und dem Bild */
+    margin-left: 7em; /* Abstand zwischen dem Text und dem Bild */
+    width: 200px;
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
 }
 
 #steffen {
@@ -211,7 +231,9 @@ body {
 
 .steffen-image {
     flex: 0 0 auto;
-    margin-right: 26em; /* Abstand zwischen dem Bild und dem Text*/
+    margin-right: 7em; /* Abstand zwischen dem Bild und dem Text*/
+    width: 300px;
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
 }
 
 #contact {
@@ -240,13 +262,16 @@ body {
     font-size: 46px; /* Schriftgröße erhöhen */
     font-weight: bold;
     color: #002D72;
-    margin-left: 100px;
     line-height: 1.2; /* Zeilenhöhe anpassen für mehr Abstand */
     max-width: 400px; /* Maximalbreite setzen, um Zeilenumbruch zu ermöglichen */
 }
 
 .contact-text h1 {
     margin: 0;
+    overflow-wrap: break-word;
+    width: calc(100% - 420px); /* damit Text Platz für das Rechteck hat */
+    display: flex;
+    flex-direction: row; /* Vertikale Ausrichtung */
 }
 
 .contact-text h1 + h1 {
@@ -262,14 +287,19 @@ form {
     padding: 20px;
     border-radius: 10px;
     overflow: hidden;
+    position: relative; /* Notwendig, um das Rechteck relativ zu positionieren */
 }
 
 .rectangle-form {
     position: absolute;
-    right: 32em;
-    width: 440px; /* Breite des Rechtecks */
+    top: calc(45% + 20px); /* rechteck nach unten verschieben */
+    transform: translateY(-50%); /* vertikal zentrieren*/
+    right: calc(65% - (var(--rectangleF-width) / 2)); /* horizontale ausrichtung*/
+    width: var(--rectangleF-width); /* Verwendet die neue CSS-Variable */
     height: 300px; /* Höhe des Rechtecks */
     border: 4px solid #FFA500;
+    z-index: 0; /* Stellt sicher, dass das Rechteck hinter dem Formularinhalt bleibt */
+    overflow: hidden; /*verhindern dass Text außerhalb dargestellt wird*/
 }
 
 form fieldset {
@@ -369,8 +399,9 @@ button[type="submit"]:hover {
 }
 
 .footer {
+    background-color: #FFA500;
     grid-row: auto;
     text-align: center;
-    margin: auto 0 0;
+    margin: 2em 0 0;
     min-height: 75px;
 }
